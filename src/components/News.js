@@ -29,7 +29,7 @@ export class News extends Component {
           }
           //KINDLY ENTER YOUR API KEY IN THIS URL
     async updateNews(pageNo){
-      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=YOUR_API_KEY&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+      let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=process.env.api_key&page=${this.state.page}&pageSize=${this.props.pageSize}`;
       let data= await fetch(url);
       this.setState({
         loading:true
